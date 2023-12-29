@@ -31,10 +31,39 @@ export default function Index() {
         <div className="relative">
           {/* Full-width cover image with responsive behavior */}
           <img
-            className="w-full h-64 object-cover rounded"
+            className="w-full h-75 object-cover rounded"
             src="https://www.themoviedb.org/t/p/w1920_and_h600_multi_faces_filter(duotone,00192f,00baff)/xpba0Dxz3sxV3QgYLR8UIe1LAAX.jpg"
             alt="Cover"
           />
+          {/* Search form over cover image */}
+          <div className="absolute top-20 right-4 left-4 -mb-4">
+            <h2 className="text-4xl text-white font-medium mb-2">
+              Welcome TMB Movie & TV Show.
+            </h2>
+            <form className="w-100 max-w-[100%]">
+              <label
+                htmlFor="search"
+                className="block text-white text-sm font-medium mb-2"
+              >
+                Millions of movies, TV shows and people to discover. Explore
+                now.
+              </label>
+              <div className="relative">
+                <input
+                  type="text"
+                  id="search"
+                  placeholder="Search for a movie, tv show, person......"
+                  className="w-full bg-white-800 text-black rounded-full px-4 py-3 focus:outline-none"
+                />
+                <button
+                  type="submit"
+                  className="absolute right-0 top-0 bottom-0 bg-blue-500 hover:text-gray-300 text-white font-normal py-2 px-4 rounded-full"
+                >
+                  Search
+                </button>
+              </div>
+            </form>
+          </div>
           {/* Centered heading with Guardian color (adjust as needed) */}
           <h2 className="text-center text-2xl font-bold text-blue-500 mt-6">
             Top Trending Movies
@@ -52,12 +81,6 @@ export default function Index() {
                 src={`https://image.tmdb.org/t/p/w500/${movie.poster_path}`}
                 alt={movie.title}
               />
-              <div className="p-4">
-                <h3 className="text-md font-small text-Neutral-900 overflow-hidden line-clamp-2">
-                  {movie.title}
-                </h3>
-                <p className="text-gray-500 text-sm">{movie.release_date}</p>
-              </div>
             </div>
           ))}
         </div>
